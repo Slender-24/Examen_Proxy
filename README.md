@@ -1,10 +1,10 @@
-# 🏢 Infraestructura Web con Proxy Inverso Nginx
+# Infraestructura Web con Proxy Inverso Nginx
 
 Despliegue de una infraestructura web empresarial usando **Docker Compose**, con proxy inverso Nginx, balanceo de carga entre dos backends y red interna aislada.
 
 ---
 
-## 📐 Diagrama de Arquitectura
+## Diagrama de Arquitectura
 
 ```
                         INTERNET / HOST
@@ -36,7 +36,7 @@ Red "backend":   proxy ↔ backend1/2   (bridge, internal: true → aislada)
 
 ---
 
-## 📁 Estructura del Repositorio
+## Estructura del Repositorio
 
 ```
 .
@@ -54,7 +54,7 @@ Red "backend":   proxy ↔ backend1/2   (bridge, internal: true → aislada)
 
 ---
 
-## ⚙️ Decisiones de Diseño
+##  Decisiones de Diseño
 
 ### ¿Por qué Nginx para todos los contenedores?
 
@@ -95,7 +95,7 @@ X-Backend-Server: <IP_del_backend>
 
 ---
 
-## 🚀 Cómo Levantar el Entorno
+##  Cómo Levantar el Entorno
 
 ### Requisitos previos
 
@@ -121,7 +121,7 @@ docker compose up -d
 
 ---
 
-## ✅ Verificación del Entorno
+##  Verificación del Entorno
 
 ### 1. Ver que los contenedores están en marcha
 
@@ -201,7 +201,7 @@ Cada petición muestra qué backend la ha procesado.
 
 ---
 
-## 🛑 Parar el Entorno
+##  Parar el Entorno
 
 ```bash
 docker compose down
@@ -209,6 +209,5 @@ docker compose down
 
 ---
 
-## 📸 Capturas de Pantalla
 
 *(Añadir aquí capturas de: navegador en http://localhost, salida de `curl -I`, salida de `docker compose ps`, y resultado de la verificación de red aislada)*
