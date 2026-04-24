@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa Demo - Proxy Inverso</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a5f, #0f172a);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 2px solid #3b82f6;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #3b82f6;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            color: #94a3b8;
+            margin-top: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #22c55e;
+            color: white;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 99px;
+            margin-top: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #334155;
+        }
+
+        section h2 {
+            color: #3b82f6;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 0.5rem;
+        }
+
+        section p {
+            color: #cbd5e1;
+            line-height: 1.8;
+        }
+
+        .media-container {
+            margin-top: 1.2rem;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            object-fit: cover;
+            max-height: 320px;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            margin-top: 0.5rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .info-card {
+            background: #0f172a;
+            border: 1px solid #3b82f6;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .info-card .label {
+            font-size: 0.75rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-card .value {
+            font-size: 1.2rem;
+            color: #22c55e;
+            font-weight: bold;
+            margin-top: 0.3rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #475569;
+            font-size: 0.85rem;
+            border-top: 1px solid #1e293b;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🏢 Empresa Demo</h1>
+        <p>Infraestructura con Proxy Inverso Nginx + Docker Compose</p>
+        <span class="badge">✅ SISTEMA OPERATIVO</span>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>📄 Sobre este entorno</h2>
+            <p>
+                Esta página es servida a través de un <strong>proxy inverso Nginx</strong> que distribuye las peticiones
+                entre dos backends en modo <em>round-robin</em>. Ambos backends comparten el mismo contenido web
+                mediante un <strong>volumen Docker compartido</strong>. La red interna es completamente aislada:
+                los backends no son accesibles directamente desde el exterior, solo a través del proxy.
+            </p>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="label">Proxy</div>
+                    <div class="value">Nginx</div>
+                </div>
+                <div class="info-card">
+                    <div class="label">Backends</div>
+                    <div class="value">2 nodos</div>
+                </div>
+                <div class="info-card">
+                    <div class="label">Balanceo</div>
+                    <div class="value">Round-Robin</div>
+                </div>
+                <div class="info-card">
+                    <div class="label">Red interna</div>
+                    <div class="value">Aislada</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🖼️ Imagen</h2>
+            <p>Ejemplo de contenido multimedia estático servido desde el volumen compartido.</p>
+            <div class="media-container">
+                <img src="imagen.jpg" alt="Imagen de ejemplo del servidor web">
+            </div>
+        </section>
+
+        <section>
+            <h2>🎬 Vídeo</h2>
+            <p>Vídeo de demostración alojado en el volumen compartido entre los dos backends.</p>
+            <div class="media-container">
+                <video controls>
+                    <source src="video.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de vídeo.
+                </video>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        Práctica Docker Compose · Proxy Inverso Nginx · Balanceo de Carga
+    </footer>
+
+</body>
+</html>
